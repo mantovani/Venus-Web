@@ -1,0 +1,22 @@
+<h2>Claims</h2>
+
+[% INCLUDE 'venues/index' %]
+
+<table border=1 width=1000>
+    <tr>
+        <td><b>Subject</b></td>
+        <td><b>Solicitation Date</b></td>
+        <td><b>Specification</b></td>
+        <td><b>Supervision</b></td>
+        <td><b>Action</b></td>
+    </tr>
+[% WHILE (cursor = search_res.next) %]
+    <tr>
+        <td>[% cursor.subject %]</td>
+        <td>[% cursor.solicitation_date %]</td>
+        <td>[% cursor.specification %]</td>
+        <td>[% cursor.supervision %]</td>
+        <td>[% cursor.actions %]</td>
+    </tr>
+[% END %]
+</table>

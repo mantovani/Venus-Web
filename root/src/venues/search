@@ -1,0 +1,11 @@
+[% INCLUDE 'venues/index' %]
+
+<table>
+[% WHILE (cursor = search_res.next) %]
+    <tr>
+        <td><a href="[% c.uri_for(c.controller('Venues').action_for('claims'),cursor.addr_cksum) %]">
+            [% cursor.name %] - [% cursor.location.formattedAddress.0 %] ([% claim_count(cursor.addr_cksum) %])
+        <a/></td>
+    </tr>
+[% END %]
+</table>

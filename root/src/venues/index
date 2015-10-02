@@ -1,0 +1,5 @@
+<h2>Search Venues</h2>
+<form method="POST" action="[% c.uri_for(c.controller('Venues').action_for('search')) %]">
+<input type="text" name="search" size="42">
+<input type="submit" value="Go!">
+</form>
