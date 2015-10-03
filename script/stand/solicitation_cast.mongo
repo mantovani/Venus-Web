@@ -1,0 +1,2 @@
+db.ComplaintsSP.find( { 'solicitation' : { $type : 2 } } ).forEach( function (x) {   x.solicitation = parseInt(x.solicitation);   db.ComplaintsSP.save(x); });
+db.ComplaintsSP.find().sort({solicitation : -1}).limit(1).pretty()
