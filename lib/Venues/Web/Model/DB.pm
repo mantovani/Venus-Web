@@ -27,7 +27,8 @@ has 'csp' => (
 sub search {
     my ( $self, $param ) = @_;
     return $self->fq->find(
-        { name => qr/$param/i, addr_cksum => { '$exists' => 1 } } );
+        { name => qr/$param/i, addr_cksum => { '$exists' => 1 } } )
+      ->sort( { 'stats.checkinsCount' => -1 } );
 }
 
 sub claim {
